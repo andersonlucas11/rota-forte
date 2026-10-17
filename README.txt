@@ -1,1 +1,1 @@
-ALASG v1.0: envie todos os arquivos para a raiz do GitHub Pages. Substitua index.html, game.js, style.css, sw.js. Preserve seu progresso usando Exportar antes da atualização. A garagem é renderizada diretamente no canvas (sem foto e sem polígonos cinza). Chat por comandos, sem IA generativa.
+Correção v1.1: caixa de mensagem e funcionário selecionado preservados durante atualização do relógio; jogo mantém dados salvos no navegador.
