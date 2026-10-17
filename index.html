@@ -1,4 +1,4 @@
-<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>Parque dos Dinossauros do Lucca</title><style>body{margin:0;background:#10251e;color:white;font:16px system-ui}#hud{position:absolute;top:12px;left:12px;background:#10251edc;padding:14px;border-radius:14px;max-width:85vw}button{background:#e6b943;border:0;border-radius:9px;padding:10px;margin:3px;font-weight:bold}#msg{font-size:13px}canvas{display:block}#cover{position:fixed;inset:0;z-index:10;background:linear-gradient(0deg,#061b16ed,transparent 65%),url('capa.png') center/cover;display:grid;place-items:end center;text-align:center}.covercontent{padding:22px 15px 9vh;text-shadow:0 3px 10px #000}.covercontent h1{font-size:clamp(27px,7vw,55px);margin:0}.covercontent p{font-weight:bold}#play{font-size:24px;padding:16px 42px;background:#ffc33c}#hud{z-index:3;max-width:calc(100vw - 35px);font-size:14px}#shop{position:fixed;z-index:5;right:10px;top:10px;bottom:10px;width:min(370px,calc(100vw - 20px));background:#10251ef5;border:2px solid #c8a84c;border-radius:16px;padding:12px;overflow:auto;box-sizing:border-box}.shophead{display:flex;justify-content:space-between;align-items:center}.item{display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid #ffffff33;padding:8px 0}.item button{font-size:12px;white-space:nowrap}button{cursor:pointer}#gift{background:#9bdab3}#msg{max-width:280px}[hidden]{display:none!important}</style><div id="cover"><div class="covercontent"><h1>🦖 PARQUE DO LUCCA</h1><p>A aventura dos dinossauros começa aqui!</p><button id="play">▶ JOGAR</button></div></div><div id="hud"><b>🦖 Parque do Lucca • V5</b><div id="cash">💰 R$ 100.000</div><button id="shopbtn">🛒 LOJA DE DINOS</button><button id="removebtn" style="background:#f0a7a7">🗑️ REMOVER DINO</button><button id="gift">🎁 BÔNUS + R$ 50.000</button><div id="removePanel" hidden style="max-height:220px;overflow:auto;background:#203c33;padding:8px;border-radius:10px"></div><div id="msg">Arraste para girar a câmera. Dois dedos para aproximar. Toque em um dinossauro para ouvir o nome! Alguns modelos 3D detalhados carregam pela internet. Use REMOVER DINO para retirar um animal.</div></div><div id="shop" hidden><div class="shophead"><b>🦕 Loja de Dinossauros</b><button id="close">✕</button></div><div id="items"></div></div><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js"}}</script><script type="module">
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>Parque dos Dinossauros do Lucca</title><style>body{margin:0;background:#10251e;color:white;font:16px system-ui}#hud{position:absolute;top:12px;left:12px;background:#10251edc;padding:14px;border-radius:14px;max-width:85vw}button{background:#e6b943;border:0;border-radius:9px;padding:10px;margin:3px;font-weight:bold}#msg{font-size:13px}canvas{display:block}#cover{position:fixed;inset:0;z-index:10;background:linear-gradient(0deg,#061b16ed,transparent 65%),url('capa.png') center/cover;display:grid;place-items:end center;text-align:center}.covercontent{padding:22px 15px 9vh;text-shadow:0 3px 10px #000}.covercontent h1{font-size:clamp(27px,7vw,55px);margin:0}.covercontent p{font-weight:bold}#play{font-size:24px;padding:16px 42px;background:#ffc33c}#hud{z-index:3;max-width:calc(100vw - 35px);font-size:14px}#shop{position:fixed;z-index:5;right:10px;top:10px;bottom:10px;width:min(370px,calc(100vw - 20px));background:#10251ef5;border:2px solid #c8a84c;border-radius:16px;padding:12px;overflow:auto;box-sizing:border-box}.shophead{display:flex;justify-content:space-between;align-items:center}.item{display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid #ffffff33;padding:8px 0}.item button{font-size:12px;white-space:nowrap}button{cursor:pointer}#gift{background:#9bdab3}#msg{max-width:280px}[hidden]{display:none!important}</style><div id="cover"><div class="covercontent"><h1>🦖 PARQUE DO LUCCA</h1><p>A aventura dos dinossauros começa aqui!</p><button id="play">▶ JOGAR</button></div></div><div id="hud"><b>🦖 Parque do Lucca • V7</b><div id="cash">💰 R$ 100.000</div><button id="shopbtn">🛒 LOJA DE DINOS</button><button id="removebtn" style="background:#f0a7a7">🗑️ REMOVER DINO</button><button id="soundbtn" style="background:#a9d5ef">🔊 SOM LIGADO</button><button id="gift">🎁 BÔNUS + R$ 50.000</button><div id="removePanel" hidden style="max-height:220px;overflow:auto;background:#203c33;padding:8px;border-radius:10px"></div><div id="msg">Arraste para girar a câmera. Dois dedos para aproximar. Toque em um dinossauro para ouvir seu nome e um som! Alguns modelos 3D detalhados carregam pela internet. Use REMOVER DINO para retirar um animal.</div></div><div id="shop" hidden><div class="shophead"><b>🦕 Loja de Dinossauros</b><button id="close">✕</button></div><div id="items"></div></div><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js"}}</script><script type="module">
 import * as THREE from 'three';
 const scene=new THREE.Scene();scene.background=new THREE.Color(0x9bd9e9);scene.fog=new THREE.Fog(0x9bd9e9,75,170);const camera=new THREE.PerspectiveCamera(60,innerWidth/innerHeight,.1,300);camera.position.set(22,26,35);const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;document.body.appendChild(renderer.domElement);scene.add(new THREE.HemisphereLight(0xffffff,0x45653a,2));const sun=new THREE.DirectionalLight(0xfff5db,2.2);sun.position.set(25,40,10);sun.castShadow=true;scene.add(sun);const ground=new THREE.Mesh(new THREE.PlaneGeometry(110,110),new THREE.MeshStandardMaterial({color:0x448a4a}));ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;scene.add(ground);const mat=(c)=>new THREE.MeshStandardMaterial({color:c,roughness:.85});const wood=mat(0x8c6b46),leaf=mat(0x246e37);function cylinder(r1,r2,h,m,x,y,z){let o=new THREE.Mesh(new THREE.CylinderGeometry(r1,r2,h,8),m);o.position.set(x,y,z);o.castShadow=true;scene.add(o);return o}for(let i=0;i<85;i++){let x=(Math.random()-.5)*105,z=(Math.random()-.5)*105;if(Math.abs(x)<23&&Math.abs(z)<23)continue;let h=2+Math.random()*3;cylinder(.35,.48,h,wood,x,h/2,z);let crown=new THREE.Mesh(new THREE.ConeGeometry(1.5+Math.random(),4,7),leaf);crown.position.set(x,h+1.7,z);scene.add(crown)}const fence=mat(0x8c9695);for(let v=-22;v<=22;v+=4){for(let z of [-22,22])cylinder(.17,.17,3,fence,v,1.5,z);for(let x of [-22,22])cylinder(.17,.17,3,fence,x,1.5,v)}function rail(x,y,z,sx,sz){let o=new THREE.Mesh(new THREE.BoxGeometry(sx,.13,sz),fence);o.position.set(x,y,z);scene.add(o)}for(let y of [1,2.4]){for(let z of [-22,22])rail(0,y,z,44,.12);for(let x of [-22,22])rail(x,y,0,.12,44)}let animals=[],cash=100000;const catalog=[['Tricerátops',12000,0x9a805d],['T-Rex',45000,0x66814c],['Braquiossauro',26000,0x8c9671],['Velociraptor',16000,0x5c8658],['Espinossauro',48000,0x587e8c],['Estegossauro',18000,0x829358],['Anquilossauro',19000,0x767e64],['Pteranodon',21000,0x937c65],['Diplodoco',27000,0x759775],['Carnotauro',31000,0x9b5145],['Paquicefalossauro',14000,0x9b8a58],['Parassaurolofo',17000,0x698a7a],['Ultimate',95000,0x332c39]];const colors=Object.fromEntries(catalog.map(d=>[d[0],d[2]]));const saved=JSON.parse(localStorage.getItem('luccaParkSave')||'null');if(saved&&Number.isFinite(saved.cash)){cash=saved.cash;document.getElementById('cash').textContent='💰 R$ '+cash.toLocaleString('pt-BR')}const removePanel=document.getElementById('removePanel');
 document.getElementById('removebtn').onclick=()=>{removePanel.hidden=!removePanel.hidden;renderRemove()};
@@ -55,29 +55,48 @@ const realModels={
 // T-Rex e Carnotauro têm seus próprios modelos, não substitutos.
 realModels['T-Rex']=['https://cdn.3dassets.dev/assets/1682/v1/model.glb',6];
 delete realModels['Carnotauro'];
-const spec=realModels[name];
-if(spec){
+const localNames={'T-Rex':'trex','Tricerátops':'triceratops','Braquiossauro':'braquiossauro','Velociraptor':'velociraptor','Espinossauro':'espinossauro','Estegossauro':'estegossauro','Anquilossauro':'anquilossauro','Pteranodon':'pteranodon','Diplodoco':'diplodoco','Carnotauro':'carnotauro','Paquicefalossauro':'paquicefalossauro','Parassaurolofo':'parassaurolofo','Ultimate':'ultimate'};
+const localFile='modelos/'+localNames[name]+'.glb';
+const spec=realModels[name] || null;
+if(localNames[name]){
  import('https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/loaders/GLTFLoader.js').then(({GLTFLoader})=>{
-  new GLTFLoader().load(spec[0],glb=>{
+  const loader=new GLTFLoader();
+  const install=(glb)=>{
    if(!animals.some(a=>a.g===g))return;
-   const model=glb.scene;
-   const bounds=new THREE.Box3().setFromObject(model),sz=bounds.getSize(new THREE.Vector3());
+   const model=glb.scene, bounds=new THREE.Box3().setFromObject(model),sz=bounds.getSize(new THREE.Vector3());
    const longest=Math.max(sz.x,sz.y,sz.z);
    if(longest<=0)return;
-   model.scale.setScalar(spec[1]/longest);
+   model.scale.setScalar((spec?spec[1]:6)/longest);
    bounds.setFromObject(model);
    model.position.set(-(bounds.min.x+bounds.max.x)/2,-bounds.min.y,-(bounds.min.z+bounds.max.z)/2);
    model.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});
    g.clear();g.scale.setScalar(1);g.add(model);g.userData.realistic=true;
    if(glb.animations.length){const mixer=new THREE.AnimationMixer(model);mixer.clipAction(glb.animations[0]).play();g.userData.mixer=mixer}
-  },undefined,err=>{console.warn('Modelo 3D indisponível',name,err)});
- }).catch(err=>console.warn('Carregador 3D indisponível',err));
+  };
+  const fallback=()=>{
+   if(spec)loader.load(spec[0],install,undefined,()=>{document.getElementById('msg').textContent='⚠️ O modelo 3D de '+name+' não carregou. Mostrando o modelo simples.'});
+   else document.getElementById('msg').textContent='ℹ️ '+name+' ainda precisa de um modelo GLB detalhado.';
+  };
+  loader.load(localFile,install,undefined,fallback);
+ }).catch(()=>{document.getElementById('msg').textContent='⚠️ Não foi possível carregar os modelos 3D.'});
 }
 g.position.set((Math.random()-.5)*26,0,(Math.random()-.5)*26);scene.add(g);animals.push({g,name,phase:Math.random()*6,speed:.1+Math.random()*.2});if(name==='Ultimate'){for(const zz of [-.7,.7]){let wing=new THREE.Mesh(new THREE.ConeGeometry(2.4,5,3),mat(0x503d58));wing.rotation.x=zz>0?1.15:-1.15;wing.rotation.z=Math.PI/2;wing.position.set(0,3.4,zz*2.4);g.add(wing)}for(let zz of [-.5,0,.5]){let horn=new THREE.Mesh(new THREE.ConeGeometry(.22,1.6,7),mat(0xe2d9b8));horn.rotation.z=-Math.PI/2;horn.position.set(3.45,3.35,zz);g.add(horn)}}if(!restore)save();if(!removePanel.hidden)renderRemove();document.getElementById('msg').textContent='Você comprou um '+name+'! Total: '+animals.length+' dinossauro(s).'};if(saved&&Array.isArray(saved.names))for(const name of saved.names){const d=catalog.find(x=>x[0]===name);if(d)buy(name,d[1],true)}// Identificação por toque e fala em português do Brasil.
 const raycaster=new THREE.Raycaster(),tapPoint=new THREE.Vector2();
 let touchStartX=0,touchStartY=0,touchStartTime=0;
 const friendlyNames={'T-Rex':'Tiranossauro Rex','Ultimate':'Ultimate'};
+let soundEnabled=true;
+const soundbtn=document.getElementById('soundbtn');
+soundbtn.onclick=()=>{soundEnabled=!soundEnabled;soundbtn.textContent=soundEnabled?'🔊 SOM LIGADO':'🔇 SOM DESLIGADO'};
+let currentRoar=null;
+function roar(name){
+ if(!soundEnabled)return;
+ if(currentRoar){currentRoar.pause();currentRoar.currentTime=0}
+ const type=['T-Rex','Ultimate','Espinossauro','Carnotauro'].includes(name)?'grande':name==='Pteranodon'?'voador':name==='Velociraptor'?'raptor':'herbivoro';
+ currentRoar=new Audio('sons/'+type+'.wav');currentRoar.volume=.45;
+ currentRoar.play().catch(()=>{});
+}
 function sayDinosaur(name){
+ roar(name);
  document.getElementById('msg').textContent='🦖 '+name;
  if(!('speechSynthesis' in window)){document.getElementById('msg').textContent+=' — voz indisponível neste navegador';return;}
  window.speechSynthesis.cancel();
