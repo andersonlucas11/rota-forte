@@ -1,4 +1,3 @@
-PARQUE DO LUCCA V3
-Envie index.html e capa.png para a raiz do repositório GitHub Pages.
-Os dinossauros são modelos 3D procedurais mais detalhados, ainda não modelos fotorealistas.
-O jogo requer conexão para carregar Three.js.
+PARQUE DO LUCCA V5 — MODELOS 3D DETALHADOS VIA INTERNET
+
+Envie index.html e capa.png para a raiz do repositório GitHub Pages. Esta versão carrega modelos GLB licenciados CC0 diretamente do CDN 3dassets.dev para T-Rex, Tricerátops, Braquiossauro, Velociraptor, Espinossauro, Anquilossauro e Pteranodon. O restante permanece com modelos simplificados. Os modelos GLB não possuem animação de caminhada; os dinossauros continuam se movimentando pelo cenário de maneira simples. É preciso internet. Fonte e licença: https://3dassets.dev/packs/dinosaurs-and-prehistoric-life e https://3dassets.dev/packs/primeval-frontier
