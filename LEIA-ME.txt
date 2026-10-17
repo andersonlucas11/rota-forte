@@ -1,1 +1,1 @@
-V7: sons sintetizados para 4 categorias de dinossauros, acionados ao tocar, com controle de volume ligado/desligado. Não são gravações reais de dinossauros (extintos). Modelos fotorrealistas NÃO estão incluídos. Para adicionar modelos GLB licenciados, coloque-os na pasta modelos com os nomes usados no código. Atualize index.html, capa.png e a pasta sons/ no GitHub. Progresso continua no localStorage.
+Pasta reservada para modelos GLB realistas licenciados. Ainda não incluídos.

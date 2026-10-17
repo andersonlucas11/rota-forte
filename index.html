@@ -1,4 +1,4 @@
-<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>Parque dos Dinossauros do Lucca</title><style>body{margin:0;background:#10251e;color:white;font:16px system-ui}#hud{position:absolute;top:12px;left:12px;background:#10251edc;padding:14px;border-radius:14px;max-width:85vw}button{background:#e6b943;border:0;border-radius:9px;padding:10px;margin:3px;font-weight:bold}#msg{font-size:13px}canvas{display:block}#cover{position:fixed;inset:0;z-index:10;background:linear-gradient(0deg,#061b16ed,transparent 65%),url('capa.png') center/cover;display:grid;place-items:end center;text-align:center}.covercontent{padding:22px 15px 9vh;text-shadow:0 3px 10px #000}.covercontent h1{font-size:clamp(27px,7vw,55px);margin:0}.covercontent p{font-weight:bold}#play{font-size:24px;padding:16px 42px;background:#ffc33c}#hud{z-index:3;max-width:calc(100vw - 35px);font-size:14px}#shop{position:fixed;z-index:5;right:10px;top:10px;bottom:10px;width:min(370px,calc(100vw - 20px));background:#10251ef5;border:2px solid #c8a84c;border-radius:16px;padding:12px;overflow:auto;box-sizing:border-box}.shophead{display:flex;justify-content:space-between;align-items:center}.item{display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid #ffffff33;padding:8px 0}.item button{font-size:12px;white-space:nowrap}button{cursor:pointer}#gift{background:#9bdab3}#msg{max-width:280px}[hidden]{display:none!important}</style><div id="cover"><div class="covercontent"><h1>🦖 PARQUE DO LUCCA</h1><p>A aventura dos dinossauros começa aqui!</p><button id="play">▶ JOGAR</button></div></div><div id="hud"><b>🦖 Parque do Lucca • V7</b><div id="cash">💰 R$ 100.000</div><button id="shopbtn">🛒 LOJA DE DINOS</button><button id="removebtn" style="background:#f0a7a7">🗑️ REMOVER DINO</button><button id="soundbtn" style="background:#a9d5ef">🔊 SOM LIGADO</button><button id="gift">🎁 BÔNUS + R$ 50.000</button><div id="removePanel" hidden style="max-height:220px;overflow:auto;background:#203c33;padding:8px;border-radius:10px"></div><div id="msg">Arraste para girar a câmera. Dois dedos para aproximar. Toque em um dinossauro para ouvir seu nome e um som! Alguns modelos 3D detalhados carregam pela internet. Use REMOVER DINO para retirar um animal.</div></div><div id="shop" hidden><div class="shophead"><b>🦕 Loja de Dinossauros</b><button id="close">✕</button></div><div id="items"></div></div><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js"}}</script><script type="module">
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>Parque dos Dinossauros do Lucca</title><style>body{margin:0;background:#10251e;color:white;font:16px system-ui}#hud{position:absolute;top:12px;left:12px;background:#10251edc;padding:14px;border-radius:14px;max-width:85vw}button{background:#e6b943;border:0;border-radius:9px;padding:10px;margin:3px;font-weight:bold}#msg{font-size:13px}canvas{display:block}#cover{position:fixed;inset:0;z-index:10;background:linear-gradient(0deg,#061b16ed,transparent 65%),url('capa.png') center/cover;display:grid;place-items:end center;text-align:center}.covercontent{padding:22px 15px 9vh;text-shadow:0 3px 10px #000}.covercontent h1{font-size:clamp(27px,7vw,55px);margin:0}.covercontent p{font-weight:bold}#play{font-size:24px;padding:16px 42px;background:#ffc33c}#hud{z-index:3;max-width:calc(100vw - 35px);font-size:14px}#shop{position:fixed;z-index:5;right:10px;top:10px;bottom:10px;width:min(370px,calc(100vw - 20px));background:#10251ef5;border:2px solid #c8a84c;border-radius:16px;padding:12px;overflow:auto;box-sizing:border-box}.shophead{display:flex;justify-content:space-between;align-items:center}.item{display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid #ffffff33;padding:8px 0}.item button{font-size:12px;white-space:nowrap}button{cursor:pointer}#gift{background:#9bdab3}#msg{max-width:280px}[hidden]{display:none!important}</style><div id="cover"><div class="covercontent"><h1>🦖 PARQUE DO LUCCA</h1><p>A aventura dos dinossauros começa aqui!</p><button id="play">▶ JOGAR</button></div></div><div id="hud"><b>🦖 Parque do Lucca • V8</b><div id="cash">💰 R$ 100.000</div><button id="shopbtn">🛒 LOJA DE DINOS</button><button id="removebtn" style="background:#f0a7a7">🗑️ REMOVER DINO</button><button id="soundbtn" style="background:#a9d5ef">🔊 SOM LIGADO</button><button id="testroar" style="background:#e9ad78">🦖 TESTAR RUGIDO</button><button id="gift">🎁 BÔNUS + R$ 50.000</button><div id="removePanel" hidden style="max-height:220px;overflow:auto;background:#203c33;padding:8px;border-radius:10px"></div><div id="msg">Arraste para girar a câmera. Dois dedos para aproximar. Toque em um dinossauro para ouvir seu nome e um som! O T-Rex usa um modelo 3D animado incluído no jogo. Os demais ainda precisam de modelos reais. Use REMOVER DINO para retirar um animal.</div></div><div id="shop" hidden><div class="shophead"><b>🦕 Loja de Dinossauros</b><button id="close">✕</button></div><div id="items"></div></div><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js"}}</script><script type="module">
 import * as THREE from 'three';
 const scene=new THREE.Scene();scene.background=new THREE.Color(0x9bd9e9);scene.fog=new THREE.Fog(0x9bd9e9,75,170);const camera=new THREE.PerspectiveCamera(60,innerWidth/innerHeight,.1,300);camera.position.set(22,26,35);const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;document.body.appendChild(renderer.domElement);scene.add(new THREE.HemisphereLight(0xffffff,0x45653a,2));const sun=new THREE.DirectionalLight(0xfff5db,2.2);sun.position.set(25,40,10);sun.castShadow=true;scene.add(sun);const ground=new THREE.Mesh(new THREE.PlaneGeometry(110,110),new THREE.MeshStandardMaterial({color:0x448a4a}));ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;scene.add(ground);const mat=(c)=>new THREE.MeshStandardMaterial({color:c,roughness:.85});const wood=mat(0x8c6b46),leaf=mat(0x246e37);function cylinder(r1,r2,h,m,x,y,z){let o=new THREE.Mesh(new THREE.CylinderGeometry(r1,r2,h,8),m);o.position.set(x,y,z);o.castShadow=true;scene.add(o);return o}for(let i=0;i<85;i++){let x=(Math.random()-.5)*105,z=(Math.random()-.5)*105;if(Math.abs(x)<23&&Math.abs(z)<23)continue;let h=2+Math.random()*3;cylinder(.35,.48,h,wood,x,h/2,z);let crown=new THREE.Mesh(new THREE.ConeGeometry(1.5+Math.random(),4,7),leaf);crown.position.set(x,h+1.7,z);scene.add(crown)}const fence=mat(0x8c9695);for(let v=-22;v<=22;v+=4){for(let z of [-22,22])cylinder(.17,.17,3,fence,v,1.5,z);for(let x of [-22,22])cylinder(.17,.17,3,fence,x,1.5,v)}function rail(x,y,z,sx,sz){let o=new THREE.Mesh(new THREE.BoxGeometry(sx,.13,sz),fence);o.position.set(x,y,z);scene.add(o)}for(let y of [1,2.4]){for(let z of [-22,22])rail(0,y,z,44,.12);for(let x of [-22,22])rail(x,y,0,.12,44)}let animals=[],cash=100000;const catalog=[['Tricerátops',12000,0x9a805d],['T-Rex',45000,0x66814c],['Braquiossauro',26000,0x8c9671],['Velociraptor',16000,0x5c8658],['Espinossauro',48000,0x587e8c],['Estegossauro',18000,0x829358],['Anquilossauro',19000,0x767e64],['Pteranodon',21000,0x937c65],['Diplodoco',27000,0x759775],['Carnotauro',31000,0x9b5145],['Paquicefalossauro',14000,0x9b8a58],['Parassaurolofo',17000,0x698a7a],['Ultimate',95000,0x332c39]];const colors=Object.fromEntries(catalog.map(d=>[d[0],d[2]]));const saved=JSON.parse(localStorage.getItem('luccaParkSave')||'null');if(saved&&Number.isFinite(saved.cash)){cash=saved.cash;document.getElementById('cash').textContent='💰 R$ '+cash.toLocaleString('pt-BR')}const removePanel=document.getElementById('removePanel');
 document.getElementById('removebtn').onclick=()=>{removePanel.hidden=!removePanel.hidden;renderRemove()};
@@ -89,23 +89,36 @@ const soundbtn=document.getElementById('soundbtn');
 soundbtn.onclick=()=>{soundEnabled=!soundEnabled;soundbtn.textContent=soundEnabled?'🔊 SOM LIGADO':'🔇 SOM DESLIGADO'};
 let currentRoar=null;
 function roar(name){
- if(!soundEnabled)return;
+ if(!soundEnabled)return Promise.resolve(false);
  if(currentRoar){currentRoar.pause();currentRoar.currentTime=0}
  const type=['T-Rex','Ultimate','Espinossauro','Carnotauro'].includes(name)?'grande':name==='Pteranodon'?'voador':name==='Velociraptor'?'raptor':'herbivoro';
  currentRoar=new Audio('sons/'+type+'.wav');currentRoar.volume=.45;
- currentRoar.play().catch(()=>{});
+ return currentRoar.play().then(()=>true).catch(err=>{
+  document.getElementById('msg').textContent='⚠️ Som não tocou: '+err.message+' (confira a pasta sons).';
+  return false;
+ });
 }
+document.getElementById('testroar').onclick=()=>{roar('T-Rex')};
 function sayDinosaur(name){
- roar(name);
- document.getElementById('msg').textContent='🦖 '+name;
- if(!('speechSynthesis' in window)){document.getElementById('msg').textContent+=' — voz indisponível neste navegador';return;}
- window.speechSynthesis.cancel();
- const utterance=new SpeechSynthesisUtterance(friendlyNames[name]||name);
- utterance.lang='pt-BR';utterance.rate=.82;utterance.pitch=1;utterance.volume=1;
- const voices=window.speechSynthesis.getVoices();
- const voice=voices.find(v=>v.lang.toLowerCase()==='pt-br')||voices.find(v=>v.lang.toLowerCase().startsWith('pt'));
- if(voice)utterance.voice=voice;
- window.speechSynthesis.speak(utterance);
+ document.getElementById('msg').textContent='🦖 '+name+' — rugindo!';
+ // Em Android, fala e áudio podem disputar o mesmo canal. Primeiro o rugido.
+ if('speechSynthesis' in window)window.speechSynthesis.cancel();
+ const playResult=roar(name);
+ Promise.resolve(playResult).then(played=>{
+  if(!('speechSynthesis' in window))return;
+  const speak=()=>{
+   const utterance=new SpeechSynthesisUtterance(friendlyNames[name]||name);
+   utterance.lang='pt-BR';utterance.rate=.82;utterance.pitch=1;
+   const voices=window.speechSynthesis.getVoices();
+   const voice=voices.find(v=>v.lang.toLowerCase()==='pt-br')||voices.find(v=>v.lang.toLowerCase().startsWith('pt'));
+   if(voice)utterance.voice=voice;
+   window.speechSynthesis.speak(utterance);
+  };
+  if(played&&currentRoar){
+   const audio=currentRoar;
+   audio.addEventListener('ended',speak,{once:true});
+  }else speak();
+ });
 }
 renderer.domElement.addEventListener('pointerdown',e=>{touchStartX=e.clientX;touchStartY=e.clientY;touchStartTime=performance.now()});
 renderer.domElement.addEventListener('pointerup',e=>{
